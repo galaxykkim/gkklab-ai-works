@@ -1,0 +1,76 @@
+# -----------------------------------------------------------------------
+# Flutter/Dart 관련
+# -----------------------------------------------------------------------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# -----------------------------------------------------------------------
+# Android 관련
+# -----------------------------------------------------------------------
+*.keystore
+*.jks
+*.p12
+*.pem
+local.properties
+key.properties
+**/*.release.props
+**/*.debug.props
+.kotlin/
+
+# Gradle 캐시 및 빌드 파일
+.gradle/
+captures/
+
+# -----------------------------------------------------------------------
+# iOS 관련
+# -----------------------------------------------------------------------
+**/ios/Runner.xcworkspace/xcuserdata/
+!**/Contents.json
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# xcconfig 파일 (민감한 API 키나 설정 포함 가능성)
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/DerivedData/
+#**/*.xcconfig     #민감정보가 없으므로 ignore 대상 제외.
+
+# CocoaPods
+**/Pods/
+**/Podfile.lock
+
+# -----------------------------------------------------------------------
+# Firebase & 환경 설정
+# -----------------------------------------------------------------------
+.firebase/
+**/.env*
+**/*.env.*
+**/GoogleService-Info*.plist
+**/google-services*.json
+**/firebase_options.dart
+
+# -----------------------------------------------------------------------
+# IDE 및 OS 관련
+# -----------------------------------------------------------------------
+.vscode/
+.idea/
+*.iml
+.DS_Store
+**/Thumbs.db
+Thumbs.db.qa-reports/
+.auto-loop-state.json
+.night-shift-state.json
+
+# -----------------------------------------------------------------------
+# 프로젝트 별 예외
+# -----------------------------------------------------------------------
+

@@ -1,0 +1,74 @@
+# =================================================================
+# 1. 민감 정보 및 보안 (Secrets & Credentials)
+# =================================================================
+**/.env*                      # 모든 환경 변수 파일
+**/*.keystore                 # Android 서명 키
+**/*.jks                      # Android 자바 키스토어
+**/*.p12                      # iOS 인증서
+**/*.p8                       # App Store Connect API 키
+**/*.mobileprovision          # iOS 프로비저닝 프로파일
+**/*.cert                     # 일반 인증서
+**/local.properties           # Android SDK 경로 및 로컬 키
+**/*.xcconfig                 # iOS 빌드 설정 (API 키 포함 가능성)
+**/secrets.xml                # Android 리소스 보안 파일
+
+# =================================================================
+# 2. Fastlane & CI/CD (보안 강화)
+# =================================================================
+**/fastlane/*.json            # Fastlane 내 Google Service Account 등 모든 JSON 키
+**/fastlane/report.xml        # 빌드 리포트
+**/fastlane/screenshots/      # 자동 생성 스크린샷
+**/fastlane/test_output/      # 테스트 결과물
+**/fastlane/gc_keys/          # Fastlane용 구글 키 폴더 (관습적 위치)
+**/AuthKey_*.p8               # 개별 위치의 인증 키
+**/fastlane/.env*             # Fastlane 전용 환경 변수
+
+# =================================================================
+# 3. Firebase & 클라우드 설정
+# =================================================================
+**/google-services.json       # Android Firebase 설정
+**/GoogleService-Info.plist   # iOS Firebase 설정
+**/firebase_options.dart      # Flutter Firebase 자동 생성 코드
+**/.firebaserc                # Firebase 프로젝트 별칭
+**/firebase-debug.log         # Firebase 디버그 로그
+**/service-account*.json      # 서비스 계정 키 파일 일반 패턴
+
+# =================================================================
+# 4. Flutter & 멀티 모듈 (Module A, B, C 포함)
+# =================================================================
+# 각 모듈 내부의 빌드 및 캐시 폴더를 모두 제외
+**/.dart_tool/                # 패키지 인덱스 및 빌드 캐시
+**/build/                     # 모든 모듈의 빌드 결과물 (핵심)
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/*.g.dart                   # 자동 생성 코드
+**/*.freezed.dart             # Freezed 생성 파일
+**/*.mocks.dart               # Mockito 테스트 생성 파일
+
+# =================================================================
+# 5. Native iOS & Xcode Cloud
+# =================================================================
+**/ios/Pods/                  # CocoaPods 외부 라이브러리 소스
+**/ios/.symlinks/             # Flutter 플러그인 연결 (인덱싱 부하 방지)
+**/ios/Flutter/Generated.xcconfig
+**/DerivedData/               # Xcode 빌드 캐시
+**/*.xcresult/                # Xcode 테스트/빌드 결과물
+**/ci_scripts/artifacts/      # Xcode Cloud 아티팩트
+
+# =================================================================
+# 6. IDE & 시스템 및 대용량 에셋
+# =================================================================
+**/.idea/                     # Android Studio / IntelliJ 설정
+**/.vscode/                   # VS Code 설정
+**/*.log                      # 각종 로그 파일
+**/.DS_Store
+**/assets/images/             # 대용량 이미지 폴더
+**/*.png
+**/*.jpg
+**/*.svg
+**/*.pdf
+
+# =================================================================
+# 7. 프로젝트 별 제외 파일
+# =================================================================

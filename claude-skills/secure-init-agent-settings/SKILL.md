@@ -1,10 +1,10 @@
 ---
-name: init-secure-agent
+name: secure-init-agent-settings
 description: 보안 설정 초기화 스킬. SKILL.md와 같은 위치의 secure_agent/ 폴더에서 .aiexclude 파일과 .claude 폴더 및 하위 파일들을 현재 프로젝트 root에 복사한다.
 tools: Bash
 ---
 
-# Init Secure Agent
+# Secure Init Agent Settings
 
 이 스킬 파일(`SKILL.md`)과 같은 위치의 `secure_agent/` 폴더에 저장된 보안 설정 파일들을 현재 프로젝트 root 디렉토리에 복사하는 스킬이다.
 
@@ -20,7 +20,7 @@ tools: Bash
 Bash 도구로 이 스킬의 `SKILL.md` 파일 위치를 찾아 `secure_agent/` 경로를 `SKILL_SOURCE`로 저장한다.
 
 ```bash
-SKILL_SOURCE="$(dirname "$(find ~ -name "SKILL.md" -path "*/init-secure-agent/SKILL.md" 2>/dev/null | head -1)")/secure_agent"
+SKILL_SOURCE="$(dirname "$(find ~ -name "SKILL.md" -path "*/secure-init-agent-settings/SKILL.md" 2>/dev/null | head -1)")/secure_agent"
 echo "$SKILL_SOURCE"
 ```
 

@@ -7,7 +7,7 @@ examples:
   - "리팩터링 계획서 만들어줘"
   - "구현 시작 전 아키텍처 설계해줘"
   - "코드 짜기 전에 플래닝 먼저 해줘"
-tools: Agent, EnterPlanMode, ExitPlanMode, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
+tools: Agent, Edit, EnterPlanMode, ExitPlanMode, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
 model: sonnet
 color: green
 memory: project

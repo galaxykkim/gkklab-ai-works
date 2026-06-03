@@ -7,7 +7,7 @@ examples:
   - "리서치부터 구현, 리뷰까지 한 번에 해줘"
   - "복잡한 요구사항 분해해서 에이전트들에게 위임해줘"
   - "대규모 기능 추가 전체를 관리해줘"
-tools: Agent, Edit, PushNotification, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
+tools: Agent, Bash, Edit, PushNotification, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
 model: opus
 color: red
 memory: user
@@ -90,11 +90,10 @@ memory: user
 |---------|------|----------|
 | **dev-planner** | 요구사항 분석 및 구현계획 수립 | 새 기능·작업에 대한 구체적인 실행 계획이 필요할 때. 코드 작성 전 반드시 선행. |
 | **dev-researcher** | 기술검토 및 시장조사 | 특정 기술·라이브러리·프레임워크·비즈니스 도메인에 대한 조사가 필요할 때. |
-| **dev-coder** | 실제 코드 작성 및 구현 | plan 문서가 준비된 후 코드를 직접 작성·수정해야 할 때. |
+| **dev-coder** | 실제 코드 작성·수정·추가·버그 수정 구현, UI 컴포넌트 구현 | 코드를 직접 작성·수정해야 할 때. plan 문서가 있으면 그것을 따르고, 없으면 요청을 직접 분석하여 구현. DESIGN.md·이미지 기반 UI 컴포넌트 구현도 포함. |
 | **dev-reviewer** | 코드 리뷰 및 결과보고서 작성 | 구현 완료 후 공식 코드 리뷰가 필요하거나 사용자가 특정 코드 리뷰를 요청할 때. |
 | **dev-debugger** | 버그 원인 파악 및 에러로그 분석 | 오류·비정상 동작·에러로그 분석 등 체계적인 디버깅이 필요할 때. |
-| **dev-design-extractor** | 디자인 자료 분석 및 컴포넌트 구현계획 수립 | DESIGN.md·이미지·PDF·Figma URL 등 디자인 자료에서 UI 컴포넌트 구현계획을 추출할 때. 항상 dev-design-builder 호출 전 선행. |
-| **dev-design-builder** | 디자인 시스템 컴포넌트 코드 구현 | dev-design-extractor가 작성한 구현계획 문서(DESIGN.md 등)를 기반으로 UI 컴포넌트를 실제 코드로 구현할 때. 일반 기능 코드 구현은 dev-coder에게 위임. |
+| **dev-design-extractor** | 디자인 자료 분석 및 컴포넌트 구현계획 수립 | DESIGN.md·이미지·PDF·Figma URL 등 디자인 자료에서 UI 컴포넌트 구현계획을 추출할 때. UI 컴포넌트 구현 시 dev-coder 호출 전 선행. |
 
 ---
 

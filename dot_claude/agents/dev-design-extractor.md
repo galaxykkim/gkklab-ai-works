@@ -1,6 +1,6 @@
 ---
 name: "dev-design-extractor"
-description: "DESIGN.md, 이미지, PDF, Figma URL 등 디자인 자료에서 UI 컴포넌트 구현계획을 추출·문서화할 때 사용합니다. 코드 작성 전 디자인 명세 도출 단계, 또는 dev-design-builder 호출 전 선행 단계로 호출합니다."
+description: "DESIGN.md, 이미지, PDF, Figma URL 등 디자인 자료에서 UI 컴포넌트 구현계획을 추출·문서화할 때 사용합니다. UI 컴포넌트 구현 시 dev-coder 호출 전 선행 단계로 호출합니다."
 examples:
   - "이 Figma 링크에서 컴포넌트 스펙 추출해줘"
   - "DESIGN.md에서 UI 구현계획 뽑아줘"

@@ -6,7 +6,7 @@ examples:
   - "설계 명세 기반으로 코드 작성해줘"
   - "플래닝 완료됐어, 이제 코드 짜줘"
   - "이 구현계획 문서 보고 개발해줘"
-tools: Read, WebFetch, WebSearch, Edit, Write, Bash
+tools: Bash, Edit, Read, TaskCreate, TaskGet, TaskUpdate, WebFetch, WebSearch, Write
 model: sonnet
 color: green
 memory: project

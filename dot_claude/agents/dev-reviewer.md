@@ -7,7 +7,7 @@ examples:
   - "이 커밋 범위 코드 리뷰 보고서 작성해줘"
   - "구현 결과물 품질 검사해줘"
   - "plan 문서 기준으로 구현 일치 여부 확인해줘"
-tools: Read, WebFetch, WebSearch, Write
+tools: Bash, Read, WebFetch, WebSearch, Write
 model: sonnet
 color: green
 memory: project

@@ -7,7 +7,7 @@ examples:
   - "리서치부터 구현, 리뷰까지 한 번에 해줘"
   - "복잡한 요구사항 분해해서 에이전트들에게 위임해줘"
   - "대규모 기능 추가 전체를 관리해줘"
-tools: Agent, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
+tools: Agent, Edit, PushNotification, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
 model: opus
 color: red
 memory: user

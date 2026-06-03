@@ -10,7 +10,7 @@ examples:
   - "이 팝업/얼럿이 왜 뜨는지 원인 확인해줘"
   - "로그인 시도할 때 에러 메시지가 나오는데 원인이 뭔지 분석해줘"
   - "이 동작이 어떤 코드 흐름에서 발생하는지 추론해줘"
-tools: Read, WebFetch, WebSearch, Edit, Write, Bash
+tools: Bash, Edit, Monitor, Read, TaskCreate, TaskGet, TaskUpdate, WebFetch, WebSearch, Write
 model: sonnet
 color: green
 memory: project

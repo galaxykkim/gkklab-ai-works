@@ -7,7 +7,7 @@ examples:
   - "이 디자인 이미지 분석해서 구현계획 만들어줘"
   - "디자인 자료 보고 구현 명세 작성해줘"
   - "코드 작성 전에 디자인 명세 먼저 뽑아줘"
-tools: ListMcpResourcesTool, Read, ReadMcpResourceTool, WebFetch, WebSearch, Write
+tools: Edit, ListMcpResourcesTool, Read, ReadMcpResourceTool, WebFetch, WebSearch, Write
 model: sonnet
 color: green
 memory: project

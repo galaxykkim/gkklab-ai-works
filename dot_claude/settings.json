@@ -1,0 +1,80 @@
+{
+  "general": {
+    "ignore_patterns": [
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/.DS_Store",
+      "**/*.log",
+      "**/tmp/**",
+      "**/.env*",
+      "**/*.keystore",
+      "**/*.jks",
+      "**/*.p12",
+      "**/*.p8",
+      "**/*.mobileprovision",
+      "**/*.cert",
+      "**/local.properties",
+      "**/*.xcconfig",
+      "**/secrets.xml",
+      "**/google-services.json",
+      "**/GoogleService-Info.plist",
+      "**/firebase_options.dart",
+      "**/.firebaserc",
+      "**/firebase-debug.log",
+      "**/service-account*.json",
+      "**/fastlane/*.json",
+      "**/fastlane/.env*",
+      "**/fastlane/report.xml",
+      "**/fastlane/screenshots/**",
+      "**/fastlane/test_output/**",
+      "**/fastlane/gc_keys/**",
+      "**/ci_scripts/artifacts/**",
+      "**/.dart_tool/**",
+      "**/build/**",
+      "**/.packages",
+      "**/.pub-cache/**",
+      "**/.pub/**",
+      "**/*.g.dart",
+      "**/*.freezed.dart",
+      "**/*.mocks.dart",
+      "**/ios/Pods/**",
+      "**/ios/.symlinks/**",
+      "**/ios/Flutter/Generated.xcconfig",
+      "**/DerivedData/**",
+      "**/*.xcresult/**",
+      "**/*.xcodeproj/xcuserdata/**",
+      "**/*.xcworkspace/xcuserdata/**",
+      "**/.gradle/**",
+      "**/gradlew*",
+      "**/capture/**",
+      "**/.idea/**",
+      "**/.vscode/**",
+      "**/*.iml",
+      "**/.history/**",
+      "**/assets/images/**",
+      "**/assets/videos/**",
+      "**/*.{png,jpg,jpeg,svg,pdf,mp4,ttc,ttf,gif}",
+      "**/*.so",
+      "**/*.qn"
+    ]
+  },
+  "security": {
+    "enable_content_filtering": true,
+    "content_filter_rules": [
+      {
+        "name": "API_Key_High_Entropy_Filter",
+        "pattern": "(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9\\-_]{20,}",
+        "action": "mask",
+        "description": "API, Token 등의 민감데이터 노출방지를 위한 옵션."
+      }
+    ]
+  },
+  "context": {
+    "prefer_local_modules": true,
+    "max_file_size_kb": 500,
+    "ignore_generated_files": true
+  },
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
+  }
+}

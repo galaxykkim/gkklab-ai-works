@@ -76,7 +76,7 @@ ls fastlane/Fastfile fastlane/.env 2>/dev/null
 
 ```
 테스터 그룹을 입력해주세요 (없으면 Enter 건너뜀):
-예) qa-team,developers
+예) nest-mobile, nest-frontend, nest-plan, nest-design, nest-backend
 ```
 
 ```

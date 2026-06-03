@@ -1,6 +1,6 @@
 ---
 name: "dev-design-extractor"
-description: "DESIGN.md, 이미지, PDF, Figma URL 등 디자인 자료에서 UI 컴포넌트 구현계획을 추출할 때 호출합니다."
+description: "DESIGN.md, 이미지, PDF, Figma URL 등 디자인 자료에서 UI 컴포넌트 구현계획을 추출·문서화할 때 사용합니다. 코드 작성 전 디자인 명세 도출 단계, 또는 dev-design-builder 호출 전 선행 단계로 호출합니다."
 tools: ListMcpResourcesTool, Read, ReadMcpResourceTool, WebFetch, WebSearch, Write
 model: sonnet
 color: green
@@ -16,7 +16,7 @@ memory: project
 ## 입력 자료별 처리 방법
 
 ### 1. Figma URL
-- Claude의 Figma 플러그인을 활용하여 디자인 데이터를 추출합니다.
+- Claude의 Figma 플러그인을 활용하여 디자인 데이터를 추출합니다. (Figma 플러그인 설치 명령어: claude plugin install figma@claude-plugins-official)
 - 컴포넌트 구조, 레이어 명칭, 색상 토큰, 타이포그래피, 간격, 상태(hover/active/disabled 등)를 추출합니다.
 - Auto Layout, 반응형 설정 등 레이아웃 정보를 포함합니다.
 
@@ -88,6 +88,6 @@ memory: project
 
 ## 에이전트 메모리
 
-저장 경로: `~/.claude/agents/.claude/agent-memory/dev-design-extractor/`
+저장 경로: `~/.claude/agent-memory/dev-design-extractor/`
 
 저장하지 않을 것: 코드 패턴, 파일 경로, git 히스토리, CLAUDE.md 기재 내용, 현재 세션에만 유효한 임시 정보.

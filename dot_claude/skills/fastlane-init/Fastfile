@@ -1,0 +1,131 @@
+default_platform(:android)
+
+platform :android do
+    desc "Android Debug - Firebase App Distribution 배포"
+    lane :distributionDebug do |options|
+        unless options[:note]
+            UI.user_error!("릴리즈노트(note:)를 입력해주세요.")
+        end
+        note = options[:note].gsub('\n', "\n")
+        testers = options[:testers] || ""
+        groups = options[:groups] || ""
+        flavor = options[:flavor]
+        build_type = flavor ? "#{flavor}" : "debug"
+
+        sh "flutter clean"
+        sh "flutter pub get"
+        sh "flutter build apk --#{build_type}"
+
+        firebase_app_distribution(
+            app: ENV["DEBUG_ANDROID_APP_ID"],
+            service_credentials_file: ENV["DEBUG_SERVICE_CREDENTIALS_FILE_PATH"],
+            android_artifact_type: "APK",
+            apk_path: ENV["DEBUG_APK_FILE_PATH"],
+            release_notes: note,
+            testers: testers,
+            groups: groups
+        )
+    end
+
+    desc "Android Release - Firebase App Distribution 배포"
+    lane :distributionRelease do |options|
+        unless options[:note]
+            UI.user_error!("릴리즈노트(note:)를 입력해주세요.")
+        end
+        note = options[:note].gsub('\n', "\n")
+        testers = options[:testers] || ""
+        groups = options[:groups] || ""
+        flavor = options[:flavor]
+        build_type = flavor ? "#{flavor}" : "release"
+
+        sh "flutter clean"
+        sh "flutter pub get"
+        sh "flutter build apk --#{build_type}"
+
+        firebase_app_distribution(
+            app: ENV["RELEASE_ANDROID_APP_ID"],
+            service_credentials_file: ENV["RELEASE_SERVICE_CREDENTIALS_FILE_PATH"],
+            android_artifact_type: "APK",
+            apk_path: ENV["RELEASE_APK_FILE_PATH"],
+            release_notes: note,
+            testers: testers,
+            groups: groups
+        )
+    end
+
+    desc "Android Release - Playstore 업로드"
+    lane :deploy do |options|
+        flavor = options[:flavor]
+        build_type = flavor ? "#{flavor}" : "release"
+
+        sh "flutter clean"
+        sh "flutter pub get"
+        sh "flutter build appbundle --#{build_type}"
+
+        upload_to_play_store(
+            track: "internal",
+            package_name: ENV["DEPLOY_PACKAGE_NAME"],
+            json_key: ENV["DEPLOY_SERVICE_CREDENTIALS_FILE_PATH"],
+            aab: ENV["DEPLOY_AAB_FILE_PATH"],
+            skip_upload_metadata: true,
+            skip_upload_images: true,
+            skip_upload_screenshots: true,
+            skip_upload_apk: true
+        )
+    end
+end
+
+
+platform :ios do
+    desc "iOS Debug - Firebase App Distribution 배포"
+    lane :distributionDebug do |options|
+        unless options[:note]
+            UI.user_error!("릴리즈노트(note:)를 입력해주세요.")
+        end
+        note = options[:note].gsub('\n', "\n")
+        testers = options[:testers] || ""
+        groups = options[:groups] || ""
+
+        sh "flutter clean"
+        sh "flutter pub get"
+        sh "cd ios && pod install --repo-update"
+
+        build_app(
+            workspace: "ios/Runner.xcworkspace",
+            scheme: "Runner DEV"
+        )
+        firebase_app_distribution(
+            app: ENV["DEBUG_IOS_APP_ID"],
+            service_credentials_file: ENV["DEBUG_SERVICE_CREDENTIALS_FILE_PATH"],
+            release_notes: note,
+            testers: testers,
+            groups: groups
+        )
+    end
+
+    desc "iOS Release - Firebase App Distribution 배포"
+    lane :distributionRelease do |options|
+        unless options[:note]
+            UI.user_error!("릴리즈노트(note:)를 입력해주세요.")
+        end
+        note = options[:note].gsub('\n', "\n")
+        testers = options[:testers] || ""
+        groups = options[:groups] || ""
+
+        sh "flutter clean"
+        sh "flutter pub get"
+        sh "cd ios && pod install --repo-update"
+
+        build_app(
+            workspace: "ios/Runner.xcworkspace",
+            scheme: "Runner"
+        )
+        firebase_app_distribution(
+            app: ENV["RELEASE_IOS_APP_ID"],
+            service_credentials_file: ENV["RELEASE_SERVICE_CREDENTIALS_FILE_PATH"],
+            release_notes: note,
+            testers: testers,
+            groups: groups
+        )
+    end
+end

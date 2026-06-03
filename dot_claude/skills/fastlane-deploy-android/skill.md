@@ -1,12 +1,12 @@
 ---
-skill: fastlane-distribution-android
-description: Flutter 프로젝트를 Fastlane + Firebase App Distribution으로 Android 배포합니다. build.gradle의 Flavor 정보를 자동 파악하여 빌드 옵션을 제시하고, 릴리즈 노트, 테스터 정보를 대화형으로 입력받아 해당 lane을 실행합니다.
+skill: fastlane-deploy-android
+description: Flutter 프로젝트를 Fastlane으로 Google Play Store에 Android 배포합니다. build.gradle의 Flavor 정보를 자동 파악하여 빌드 옵션을 제시하고, 릴리즈 노트, 테스터 정보를 대화형으로 입력받아 deploy lane을 실행합니다.
 tools: Read, Bash
 ---
 
 ## Overview
 
-Fastlane을 이용해 Firebase App Distribution에 Flutter 앱을 Android 배포합니다.  
+Fastlane을 이용해 Google Play Store에 Flutter 앱을 Android 배포합니다.  
 빌드 옵션은 `build.gradle` / `build.gradle.kts`에서 Flavor와 buildType을 읽어 자동으로 구성합니다.
 
 ---
@@ -82,8 +82,7 @@ productFlavors {
 Flavor가 있는 경우 `{flavor}{BuildType}` 형태로 조합합니다 (첫 글자 대문자):
 - 예: `devDebug`, `devRelease`, `stagingDebug`, `stagingRelease`, `prodDebug`, `prodRelease`
 
-Flavor가 없는 경우 buildType만 사용합니다:
-- 예: `debug`, `release`
+Flavor가 없는 경우 'release'만 사용합니다.
 
 ---
 
@@ -107,56 +106,21 @@ Flavor가 없는 경우 buildType만 사용합니다:
 
 ---
 
-### Step 5 — 릴리즈 노트 입력
-
-배포에 필요한 릴리즈 노트를 사용자에게 질문합니다:
-
-```
-릴리즈 노트를 입력해주세요 (필수):
-```
-
-입력이 비어있으면 다시 요청합니다.
-
----
-
-### Step 6 — 테스터 그룹 / 테스터 이메일 입력 (선택)
-
-배포 대상을 선택적으로 입력받습니다. 둘 다 비워두면 옵션 없이 진행합니다.
-
-```
-테스터 그룹을 입력해주세요 (없으면 Enter 건너뜀):
-예) nest-mobile, nest-frontend, nest-plan, nest-design, nest-backend
-```
-
-```
-테스터 이메일을 입력해주세요 (없으면 Enter 건너뜀):
-예) tester1@example.com,tester2@example.com
-```
-
----
-
-### Step 7 — Fastlane 명령 구성 및 실행
+### Step 5 — Fastlane 명령 구성 및 실행
 
 수집한 값으로 fastlane 명령을 구성합니다.
 
-lane 이름 결정 (`buildVariant` 끝 글자 기준):
-- `Debug`로 끝나는 경우 → lane = `distributionDebug`, `flavor:"<buildVariant>"` 추가
-  - 예: `devDebug` → `bundle exec fastlane android distributionDebug flavor:"devDebug" note:"..."`
-- `Release`로 끝나는 경우 → lane = `distributionRelease`, `flavor:"<buildVariant>"` 추가
-  - 예: `prodRelease` → `bundle exec fastlane android distributionRelease flavor:"prodRelease" note:"..."`
+lane 이름: 항상 `deploy`를 사용합니다.
 
 옵션 구성:
 - flavor는 항상 포함: `flavor:"<buildVariant>"`
-- note는 항상 포함: `note:"<릴리즈노트>"`
-- groups 입력 시 추가: `groups:"<그룹>"`
-- testers 입력 시 추가: `testers:"<테스터>"`
 
 실행 전에 아래와 같이 구성된 명령을 출력하고 사용자에게 확인을 받습니다:
 
 ```
 아래 명령으로 배포를 진행합니다:
 
-  [Android] bundle exec fastlane android distributionDebug flavor:"devDebug" note:"..." groups:"..." testers:"..."
+  [Android] bundle exec fastlane android deploy flavor:"devRelease"
 
 계속 진행할까요? (y/n):
 ```
@@ -166,7 +130,7 @@ lane 이름 결정 (`buildVariant` 끝 글자 기준):
 실행:
 
 ```bash
-bundle exec fastlane android <lane> flavor:"<buildVariant>" note:"릴리즈노트" groups:"그룹" testers:"테스터"
+bundle exec fastlane android deploy flavor:"<buildVariant>"
 ```
 
 ---
@@ -178,7 +142,6 @@ bundle exec fastlane android <lane> flavor:"<buildVariant>" note:"릴리즈노�
 ✅ 배포 완료
    플랫폼    : Android
    빌드 옵션 : <buildVariant>
-   릴리즈노트: <note>
 ```
 
 실패 시:

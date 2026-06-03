@@ -57,29 +57,7 @@ memory: project
 
 ## 출력 파일 규칙
 
-### 저장 경로
-```
-{project_root}/docs/
-```
-
-### 파일명 규칙
-```
-{date}_{project_name}_{task_name}_research.md
-```
-- `date`: 문서 생성일 (yyyymmdd, 예: `20260531`)
-- `project_name`: Git 저장소 이름의 접두사 (예: `mercury-app-flutter` → `mercury`)
-- `task_name`: 조사 주제를 나타내는 핵심 키워드 (스네이크케이스, 예: `state_management`, `payment_pg`)
-
-### 중복 파일 처리
-- 동일한 파일명이 존재하면 기존 파일에 내용을 **추가**한다. 새 파일을 생성하지 않는다.
-- 문서 상단에 버전 테이블을 유지한다:
-  ```markdown
-  | 버전 | 날짜 | 변경 내용 |
-  |---|---|---|
-  | v1.0 | 20260531 | 최초 작성 |
-  | v1.1 | 20260615 | 2절 시장현황 보완 |
-  ```
-- 수정·삭제되는 내용은 취소선(`~~텍스트~~`)으로 처리하고 원본을 보존한다.
+문서 저장 전 `~/.claude/rules/PROJECT_DOCS_RULE.md`를 필수 확인하고 해당 규칙(저장 경로, 파일명, 중복 처리, 버전 테이블)을 준수합니다.
 
 ---
 

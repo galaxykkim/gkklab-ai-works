@@ -74,10 +74,7 @@ memory: project
 
 ## 문서 저장 규칙
 
-구현계획 문서는 **PROJECT_DOCS_RULE**에 따라 저장합니다:
-- 경로: `{project_root}/docs/`
-- 파일명: `{yyyymmdd}_{project_name}_{task_name}_plan.md`
-- 동일 파일명 존재 시 기존 파일에 내용 추가 (버전 테이블 상단 유지)
+구현계획 문서 저장 전 `~/.claude/rules/PROJECT_DOCS_RULE.md`를 필수 확인하고 해당 규칙(저장 경로, 파일명, 중복 처리, 버전 테이블)을 준수합니다.
 
 ---
 

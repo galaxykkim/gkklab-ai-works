@@ -48,7 +48,7 @@ memory: project
 - 구체적인 파일명, 라인 위치, 문제 내용, 권고사항을 명시
 ### 4단계: 보고서 파일 작성
 
-**파일 경로 및 파일명 규칙:** PROJECT_DOCS_RULE.md 준수 (type: `report`)
+**파일 경로 및 파일명 규칙:** `~/.claude/rules/PROJECT_DOCS_RULE.md` 필수 확인 후 준수
 
 **보고서 구조:**
 ```markdown

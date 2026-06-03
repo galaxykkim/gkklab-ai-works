@@ -1,6 +1,6 @@
 ---
 name: "dev-debugger"
-description: "앱 크래시, 에러 메시지, 비정상 동작, 팝업·얼럿의 발생 원인 분석이 필요할 때 사용합니다. 에러 로그·스택 트레이스 분석, 재현 불가 버그 추적, 코드 흐름 분석을 통한 원인 추론, 체계적인 디버깅 세션 수행 시 호출합니다. 실제 로그가 없어도 '왜 이런 현상이 발생하는지' 원인을 코드에서 추론하는 작업도 포함됩니다. 원인 파악 및 해결 방안 제시까지 담당하며, 실제 코드 수정 구현은 dev-coder를 사용하세요."
+description: "앱 크래시, 에러 메시지, 비정상 동작, 팝업·얼럿의 발생 원인 분석이 필요할 때 사용합니다. 에러 로그·스택 트레이스 분석, 재현 불가 버그 추적, 코드 흐름 분석을 통한 원인 추론, 체계적인 디버깅 세션 수행 시 호출합니다. 실제 로그가 없어도 '왜 이런 현상이 발생하는지' 원인을 코드에서 추론하는 작업도 포함됩니다. 원인 파악 및 해결 방안 제시까지 담당합니다."
 examples:
   - "앱이 크래시 나는데 원인 찾아줘"
   - "이 에러 로그 분석해줘"
@@ -10,7 +10,7 @@ examples:
   - "이 팝업/얼럿이 왜 뜨는지 원인 확인해줘"
   - "로그인 시도할 때 에러 메시지가 나오는데 원인이 뭔지 분석해줘"
   - "이 동작이 어떤 코드 흐름에서 발생하는지 추론해줘"
-tools: Bash, Edit, Monitor, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
+tools: Bash, Edit, Monitor, Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch
 model: sonnet
 color: green
 memory: project

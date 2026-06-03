@@ -1,7 +1,13 @@
 ---
 name: "dev-researcher"
 description: "기술·라이브러리·프레임워크 도입 전 기술검토, 또는 A vs B 비교·시장조사가 필요할 때 사용합니다. 공식 자료 기반 research 문서를 작성하며, dev-planner가 기술조사를 위임할 때도 호출합니다."
-tools: Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Edit, Write
+examples:
+  - "Retrofit vs Ktor 비교해줘"
+  - "이 라이브러리 도입 전 기술 검토해줘"
+  - "Flutter 상태관리 라이브러리 조사해줘"
+  - "이 기술 스택 시장 현황 조사해줘"
+  - "A vs B 트레이드오프 분석해줘"
+tools: Read, WebFetch, WebSearch, Edit, Write
 model: sonnet
 color: green
 memory: project

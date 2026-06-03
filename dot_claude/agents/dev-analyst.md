@@ -1,7 +1,13 @@
 ---
 name: "dev-analyst"
 description: "프로젝트 소스코드의 아키텍처, 디자인 패턴, 사용 라이브러리, 코드 구조 파악이 필요할 때 사용합니다. Android/iOS/Flutter 플랫폼별 단일 인스턴스로 실행하며, 리팩터링·기술 감사·온보딩 전 코드베이스 분석 시 호출합니다."
-tools: ListMcpResourcesTool, Read, ReadMcpResourceTool, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch
+examples:
+  - "이 프로젝트 아키텍처 분석해줘"
+  - "Android 코드베이스 구조 파악해줘"
+  - "리팩터링 전에 현재 코드 구조 알고 싶어"
+  - "이 앱에서 사용 중인 라이브러리 목록 뽑아줘"
+  - "온보딩 전에 코드베이스 전체 분석해줘"
+tools: ListMcpResourcesTool, Read, ReadMcpResourceTool, WebFetch, WebSearch
 model: opus
 color: yellow
 memory: user

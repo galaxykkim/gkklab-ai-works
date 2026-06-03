@@ -1,6 +1,11 @@
 ---
 name: "dev-coder"
 description: "구현계획 문서나 설계 명세를 바탕으로 코드 구현을 요청할 때 사용합니다."
+examples:
+  - "이 plan 문서대로 구현해줘"
+  - "설계 명세 기반으로 코드 작성해줘"
+  - "플래닝 완료됐어, 이제 코드 짜줘"
+  - "이 구현계획 문서 보고 개발해줘"
 tools: Read, WebFetch, WebSearch, Edit, Write, Bash
 model: sonnet
 color: green

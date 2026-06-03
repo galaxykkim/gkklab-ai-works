@@ -1,6 +1,12 @@
 ---
 name: "dev-planner"
 description: "코드 변경(신규 기능, 기존 기능 수정, 리팩터링) 시작 전 구현 계획 수립 시 사용합니다. 코딩에 앞서 반드시 먼저 호출하며, 완료 후 docs/*_plan.md를 생성합니다."
+examples:
+  - "이 기능 구현하기 전에 계획 세워줘"
+  - "새 기능 추가 전 plan 문서 작성해줘"
+  - "리팩터링 계획서 만들어줘"
+  - "구현 시작 전 아키텍처 설계해줘"
+  - "코드 짜기 전에 플래닝 먼저 해줘"
 tools: Read, TaskCreate, TaskGet, TaskList, TaskStop, TaskUpdate, WebFetch, WebSearch, Write
 model: sonnet
 color: green

@@ -1,6 +1,12 @@
 ---
 name: "dev-reviewer"
 description: "코드 구현 완료 후 공식 코드 리뷰 보고서 작성 시 사용합니다. dev-coder 완료 후, 또는 특정 코드·커밋 리뷰 요청 시 호출합니다. CLAUDE.md·plan 문서 기준으로 검사하며 코드는 직접 수정하지 않습니다."
+examples:
+  - "이 코드 리뷰해줘"
+  - "dev-coder가 구현 완료했어, 코드 검토해줘"
+  - "이 커밋 범위 코드 리뷰 보고서 작성해줘"
+  - "구현 결과물 품질 검사해줘"
+  - "plan 문서 기준으로 구현 일치 여부 확인해줘"
 tools: Read, WebFetch, WebSearch, Write
 model: sonnet
 color: green
